@@ -3,8 +3,7 @@ package com.example.gabriel.sqliteexample.util;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import com.example.gabriel.sqliteexample.constants.Query;
+import com.example.gabriel.sqliteexample.model.Pessoa;
 
 public class ConnectionDataBase extends SQLiteOpenHelper {
 
@@ -17,12 +16,12 @@ public class ConnectionDataBase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(Query.tableSqlite());
+        sqLiteDatabase.execSQL(Pessoa.CREATE_TABLE_PESSOA);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        sqLiteDatabase.execSQL(Query.dropTableSqlite());
+        sqLiteDatabase.execSQL(Pessoa.DROP_TABLE_PESSOA);
         onCreate(sqLiteDatabase);
     }
 
