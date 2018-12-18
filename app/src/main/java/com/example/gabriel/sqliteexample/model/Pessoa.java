@@ -81,12 +81,13 @@ public class Pessoa {
         }
     }
 
-    public void updatePessoa(SQLiteDatabase sqLiteDatabase, Pessoa pessoa) {
+    public void updatePessoa(SQLiteDatabase sqLiteDatabase, Pessoa pessoa, int id) {
         try {
             SQLiteStatement sqLiteStatement = sqLiteDatabase.compileStatement(UPDATE_PESSOA);
             sqLiteStatement.bindString(1, pessoa.getNome());
             sqLiteStatement.bindString(2, pessoa.getEmail());
             sqLiteStatement.bindLong(3, pessoa.getIdade());
+            sqLiteStatement.bindLong(4, id);
             sqLiteStatement.execute();
         } catch (SQLException e) {
             Log.i("UPDATE_PESSOA", " " + e);
