@@ -1,21 +1,17 @@
 package com.example.gabriel.sqliteexample.util;
 
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-public class DataBase extends ConnectionDataBase {
+public class DataBase {
 
     private SQLiteDatabase sqLiteDatabase = null;
-    private Cursor cursor = null;
 
-    public DataBase(Context context) {
-        super(context);
-        ConnectionDataBase connectionDataBase = new ConnectionDataBase(context);
-        sqLiteDatabase = connectionDataBase.getWritableDatabase();
-    }
-
-    public SQLiteDatabase sqLiteDatabaseInstance() {
+    public SQLiteDatabase sqLiteDatabaseInstance(Context context) {
+        if(sqLiteDatabase == null) {
+            sqLiteDatabase = new ConnectionDataBase(context).getWritableDatabase();
+            return sqLiteDatabase;
+        }
         return sqLiteDatabase;
     }
 }
