@@ -87,7 +87,7 @@ public class Pessoa {
 
     public void dropTablePessoa(SQLiteDatabase sqLiteDatabase, String name) {
         try {
-            sqLiteDatabase.execSQL("drop table " + NOME_TABLE);
+            sqLiteDatabase.execSQL(DROP_TABLE_PESSOA);
             sqLiteDatabase.close();
         } catch (SQLException e) {
             Log.i("DROP_TABLE", " " + e);
