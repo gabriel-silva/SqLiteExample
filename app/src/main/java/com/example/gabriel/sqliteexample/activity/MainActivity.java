@@ -1,9 +1,10 @@
-package com.example.gabriel.sqliteexample;
+package com.example.gabriel.sqliteexample.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.gabriel.sqliteexample.R;
 import com.example.gabriel.sqliteexample.model.Pessoa;
 import com.example.gabriel.sqliteexample.util.DataBase;
 
