@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("Email"," " + pessoaList.get(i).getEmail());
             }
         }catch (Exception e){
-            Log.i("Erro: ", " " + e);
+            Log.i("Erro", " " + e);
         }
 
     }
